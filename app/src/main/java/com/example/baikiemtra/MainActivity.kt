@@ -11,9 +11,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val student = Student(
-            studentId = "SV002",
-            fullName = "Nguyen Van A",
-            className = "21T2",
+            studentId = "2415053122206",
+            fullName = "lam Hung Thien Doanh",
+            className = "24T2",
             age = 21,
             score = 8.5,
             major = "Công nghệ thông tin"
