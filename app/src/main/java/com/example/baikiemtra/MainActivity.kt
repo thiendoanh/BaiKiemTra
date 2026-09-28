@@ -11,28 +11,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val student = Student(
-            studentId = "2415053122206",
-            fullName = "Lam Hung Thien Doanh",
-            className = "24T2",
+            studentId = "SV002",
+            fullName = "Nguyen Van A",
+            className = "21T2",
             age = 21,
-            score = 8.5
+            score = 8.5,
+            major = "Công nghệ thông tin"
         )
 
         val tvStudentId = findViewById<TextView>(R.id.tvStudentId)
         val tvFullName = findViewById<TextView>(R.id.tvFullName)
         val tvClass = findViewById<TextView>(R.id.tvClass)
         val tvAge = findViewById<TextView>(R.id.tvAge)
-        val tvScore = findViewById<TextView>(R.id.tvScore)
-        val tvStatus = findViewById<TextView>(R.id.tvStatus)
-        val tvRank = findViewById<TextView>(R.id.tvRank)
+        val tvMajor = findViewById<TextView>(R.id.tvMajor)
+        val tvFormattedScore = findViewById<TextView>(R.id.tvFormattedScore)
+        val tvSummaryInfo = findViewById<TextView>(R.id.tvSummaryInfo)
 
         tvStudentId.text = "Mã sinh viên: ${student.studentId}"
-        tvFullName.text = "Họ và tên: ${student.getUppercaseName()}"
+        tvFullName.text = "Họ và tên: ${student.fullName}"
         tvClass.text = "Lớp: ${student.className}"
         tvAge.text = "Tuổi: ${student.age}"
-        tvScore.text = "Điểm: ${student.score}"
+        tvMajor.text = "Chuyên ngành (Bổ sung): ${student.major}"
 
-        tvStatus.text = "Trạng thái: ${student.getStatus()}"
-        tvRank.text = "Xếp loại: ${student.getAcademicRank()}"
+        tvFormattedScore.text = "Điểm (Định dạng đặc biệt): ${student.getFormattedScore()}"
+        tvSummaryInfo.text = student.getSummaryInfo()
     }
 }
