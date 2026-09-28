@@ -47,11 +47,20 @@
             android:layout_marginBottom="8dp"/>
 
         <TextView
-            android:id="@+id/tvScore"
+            android:id="@+id/tvMajor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
             android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvFormattedScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#D32F2F"
+            android:layout_marginBottom="16dp"/>
 
         <View
             android:layout_width="match_parent"
@@ -60,22 +69,13 @@
             android:layout_marginVertical="12dp"/>
 
         <TextView
-            android:id="@+id/tvStatus"
+            android:id="@+id/tvSummaryInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#008000"
-            android:layout_marginBottom="8dp"/>
-
-        <TextView
-            android:id="@+id/tvRank"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#0000FF"
-            android:layout_marginBottom="8dp"/>
+            android:textSize="15sp"
+            android:textColor="#1976D2"
+            android:background="#F5F5F5"
+            android:padding="12dp"/>
 
     </LinearLayout>
 </ScrollView>
