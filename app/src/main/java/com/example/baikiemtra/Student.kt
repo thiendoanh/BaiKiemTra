@@ -5,23 +5,29 @@ data class Student(
     val fullName: String,
     val className: String,
     val age: Int,
-    val score: Double
+    val score: Double,
+    val major: String
 )
 
-fun Student.getUppercaseName(): String {
-    return this.fullName.uppercase()
-}
-
-fun Student.getStatus(): String {
-    return if (this.score >= 5.0) "Đạt" else "Chưa đạt"
-}
-
-fun Student.getAcademicRank(): String {
-    return when {
-        this.score >= 8.5 -> "Xuất sắc"
-        this.score >= 7.0 -> "Giỏi"
-        this.score >= 5.5 -> "Khá"
-        this.score >= 4.0 -> "Trung bình"
-        else -> "Yếu"
+fun Student.getFormattedScore(): String {
+    val gradeLetter = when {
+        this.score >= 8.5 -> "A"
+        this.score >= 7.0 -> "B"
+        this.score >= 5.5 -> "C"
+        this.score >= 4.0 -> "D"
+        else -> "F"
     }
+    return String.format("%.2f / 10.0 (Điểm chữ: %s)", this.score, gradeLetter)
+}
+
+fun Student.getSummaryInfo(): String {
+    return """
+        --- THÔNG TIN CHI TIẾT ---
+        Mã SV: ${this.studentId}
+        Họ tên: ${this.fullName}
+        Lớp: ${this.className}
+        Tuổi: ${this.age}
+        Chuyên ngành: ${this.major}
+        Điểm số: ${this.getFormattedScore()}
+    """.trimIndent()
 }
